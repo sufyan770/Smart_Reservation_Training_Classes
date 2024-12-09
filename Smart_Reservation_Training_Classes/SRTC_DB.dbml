@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="SRTC_DB" Class="SRTC_DBDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.TBLCourses" Member="TBLCourses">
+    <Type Name="TBLCourse">
+      <Column Name="CourseCode" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CourseName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CourseType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="TBLCourse_TBLReservation" Member="TBLReservations" ThisKey="CourseCode" OtherKey="CourseCode" Type="TBLReservation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBLReservations" Member="TBLReservations">
+    <Type Name="TBLReservation">
+      <Column Name="ReservationID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CourseCode" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="RoomCode" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="StartDate" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="EndDate" Type="System.String" DbType="Char(15)" CanBeNull="true" />
+      <Column Name="Time" Type="System.String" DbType="Char(30)" CanBeNull="true" />
+      <Column Name="Duration" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Statuse" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Language" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="TargetGroup" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ExpectedNumber" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="ImplementingEntity" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="BeneficiaryEntity" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="LecturerName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Requirements" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UseOfComputer" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+      <Column Name="CourseTopics" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="TBLCourse_TBLReservation" Member="TBLCourse" ThisKey="CourseCode" OtherKey="CourseCode" Type="TBLCourse" IsForeignKey="true" />
+      <Association Name="TBLRoom_TBLReservation" Member="TBLRoom" ThisKey="RoomCode" OtherKey="RoomCode" Type="TBLRoom" IsForeignKey="true" />
+      <Association Name="TBLUser_TBLReservation" Member="TBLUser" ThisKey="UserID" OtherKey="UserID" Type="TBLUser" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBLRooms" Member="TBLRooms">
+    <Type Name="TBLRoom">
+      <Column Name="RoomCode" Type="System.String" DbType="NVarChar(200) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RoomName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RoomType" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RoomLocation" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="RoomCapacity" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="TBLRoom_TBLReservation" Member="TBLReservations" ThisKey="RoomCode" OtherKey="RoomCode" Type="TBLReservation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TBLUsers" Member="TBLUsers">
+    <Type Name="TBLUser">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Role" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="TBLUser_TBLReservation" Member="TBLReservations" ThisKey="UserID" OtherKey="UserID" Type="TBLReservation" />
+    </Type>
+  </Table>
+</Database>

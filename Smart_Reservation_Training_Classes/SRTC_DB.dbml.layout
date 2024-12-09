@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SRTC_DB">
+  <DataContextMoniker Name="/SRTC_DBDataContext" />
+  <nestedChildShapes>
+    <classShape Id="c35d3320-4cdd-466f-af62-45d3fa2b3031" absoluteBounds="0.75, 3.25, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/SRTC_DBDataContext/TBLCourse" />
+      <nestedChildShapes>
+        <elementListCompartment Id="82097305-4959-416f-bac6-8934bcc1c6bf" absoluteBounds="0.765, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f9bdd1f5-0217-4eed-9b98-fa62164b2377" absoluteBounds="4.25, 1.875, 2, 4.4631168619791666">
+      <DataClassMoniker Name="/SRTC_DBDataContext/TBLReservation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="876a835f-821a-47a5-8a42-3fcab88111ee" absoluteBounds="4.2650000000000006, 2.335, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="059033df-5b38-4a21-878c-1bc5a61ede73" absoluteBounds="0.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/SRTC_DBDataContext/TBLRoom" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fcdfa076-c11f-4cbb-8c38-71459777e137" absoluteBounds="0.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c0a2c8ac-a0d6-4766-8b12-44022e92746a" absoluteBounds="0.75, 5.5, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/SRTC_DBDataContext/TBLUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="95435942-ca27-4280-ab63-a3e8a941d0aa" absoluteBounds="0.765, 5.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.94314697265625); (4.25 : 3.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SRTC_DBDataContext/TBLCourse/TBLCourse_TBLReservation" />
+      <nodes>
+        <classShapeMoniker Id="c35d3320-4cdd-466f-af62-45d3fa2b3031" />
+        <classShapeMoniker Id="f9bdd1f5-0217-4eed-9b98-fa62164b2377" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 2.19794840494792); (4.25 : 2.19794840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SRTC_DBDataContext/TBLRoom/TBLRoom_TBLReservation" />
+      <nodes>
+        <classShapeMoniker Id="059033df-5b38-4a21-878c-1bc5a61ede73" />
+        <classShapeMoniker Id="f9bdd1f5-0217-4eed-9b98-fa62164b2377" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 5.91905843098958); (4.25 : 5.91905843098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SRTC_DBDataContext/TBLUser/TBLUser_TBLReservation" />
+      <nodes>
+        <classShapeMoniker Id="c0a2c8ac-a0d6-4766-8b12-44022e92746a" />
+        <classShapeMoniker Id="f9bdd1f5-0217-4eed-9b98-fa62164b2377" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
